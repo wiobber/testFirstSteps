@@ -30,6 +30,9 @@ jobs:
             ${{ runner.os }}-buildx-
 
       - name: Pull and Run Docker Image
+        env:
+          GPG_KEY: ${{ secrets.GPG_KEY }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
         run: |
           ./xmScripts/xmlatex bake -t --compile draft.html test.tex 
           ./xmScripts/xmlatex name
