@@ -34,6 +34,7 @@ jobs:
           GPG_KEY: ${{ secrets.GPG_KEY }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
         run: |
+          ls -alrt
           ./xmScripts/xmlatex bake -t --compile draft.html test.tex 
           ./xmScripts/xmlatex name
           ./xmScripts/xmlatex frost test.tex 
