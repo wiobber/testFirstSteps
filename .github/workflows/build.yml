@@ -39,4 +39,3 @@ jobs:
           ./xmScripts/xmlatex name
           ./xmScripts/xmlatex frost test.tex 
           ./xmScripts/xmlatex serve
-          ls -alrt 
