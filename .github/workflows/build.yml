@@ -30,4 +30,4 @@ jobs:
 
       - name: Pull and Run Docker Image
         run: |
-          xmlatex bake --compile html
+          ./xmScripts/xmlatex bake --compile html
