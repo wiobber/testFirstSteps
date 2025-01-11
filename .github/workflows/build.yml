@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      actions: read
       contents: read
-      packages: read
+      packages: write
 
     steps:
       - name: Checkout code
@@ -30,4 +31,7 @@ jobs:
 
       - name: Pull and Run Docker Image
         run: |
-          ./xmScripts/xmlatex bake -t --compile draft.html test.tex
+          ./xmScripts/xmlatex bake -t --compile draft.html test.tex 
+          ./xmScripts/xmlatex name
+          ./xmScripts/xmlatex frost test.tex 
+          ./xmScripts/xmlatex serve
