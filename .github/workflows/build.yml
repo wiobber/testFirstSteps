@@ -36,9 +36,9 @@ jobs:
           XIMERA_NAME: fromaction
         run: |
           ls -alrt
-          A="$GPG_KEY"
-          echo "K=$GPG_KEY:0:20}"
-          echo "A=$A:0:20}"
+          A="${GPG_KEY:10:60}"
+          echo "K=${GPG_KEY:0:20}"
+          echo "A=${A:0:20}"
           ./xmScripts/xmlatex bake -t --compile draft.html test.tex 
           ls -alrt
           ./xmScripts/xmlatex -d name
