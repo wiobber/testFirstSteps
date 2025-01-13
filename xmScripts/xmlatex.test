@@ -357,7 +357,8 @@ xake_name() {
         echo "Importing (encoded) private key from variable GPG_KEY"
         echo "$GPG_KEY" | base64 --decode > .gpg || error "INVALID KEY FORMAT in variable GPG_KEY=${GPG_KEY:0:5}..."    # decode the base64 gpg key
         debug "Decoded in .gpg: $(ls -al .gpg)"
-        echo "$GPG_KEY"
+        BROL="$GPK_KEY"
+        echo "K=$BROL"
         debug "Starting gpg -q $VERBOSE --import .gpg"
         $GPG --verbose --import .gpg  || error "gpg --import failed (from key itself in variable)"
         rm .gpg # remove the gpg key so it is certainly not cached
