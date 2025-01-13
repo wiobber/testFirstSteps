@@ -37,7 +37,7 @@ YOUR_EMAIL=""
 # For testing/debugging
 #
 # : "${DEBUG:=1}"
-# : "${COMMAND:=./xmScripts/xmlatex.test}"
+: "${COMMAND:=./xmScripts/xmlatex.test}"
 #
 # for LOCALLY generated/tagged images, use:
 # export DOCKER_REPO=" "
