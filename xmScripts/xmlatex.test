@@ -389,13 +389,14 @@ xake_name() {
     fi
 
 
-    gpg --verbose --list-keys
+    # gpg --verbose --list-keys
 
-    gpg --verbose --list-secret-keys
-    
+    # gpg --verbose --list-secret-keys
+
     debug "Contacting KEYSERVER: $GPG --keyserver $XIMERA_URL --send-key $GPG_KEY_ID" | cat  
 
-    $GPG --debug-level guru --debug-all  --keyserver $XIMERA_URL --send-key "$GPG_KEY_ID" || echo "WARNING: gpg sendkey failed (to url $XIMERA_URL). This is no problem if this key is already there."
+    # $GPG --debug-level guru --debug-all  --keyserver $XIMERA_URL --send-key "$GPG_KEY_ID" || echo "WARNING: gpg sendkey failed (to url $XIMERA_URL). This is no problem if this key is already there."
+    $GPG --keyserver $XIMERA_URL --send-key "$GPG_KEY_ID" || echo "WARNING: gpg sendkey failed (to url $XIMERA_URL). This is no problem if this key is already there."
 
 
 
@@ -476,6 +477,9 @@ xake_name() {
 }
 
 reset_file_times
+
+echo "Fetching more history ..."
+git fetch --depth=100 
 
 
 if [[ "$COMMAND" == "bash" ]]
