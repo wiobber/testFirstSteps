@@ -42,7 +42,8 @@ jobs:
           echo "A=${A:0:20}"
           ./xmScripts/xmlatex bake -t --compile draft.html test.tex 
           ls -alrt
-          ./xmScripts/xmlatex -d name
+          ./xmScripts/xmlatex -d name >name.log || echo FAILED
+          cat name.log
           ./xmScripts/xmlatex frost test.tex 
           ./xmScripts/xmlatex serve
           ls -alrt
