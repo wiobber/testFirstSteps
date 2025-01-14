@@ -396,6 +396,8 @@ xake_name() {
 
     $GPG --keyserver $XIMERA_URL --send-key "$GPG_KEY_ID" || echo "WARNING: gpg sendkey failed (to url $XIMERA_URL). This is no problem if this key is already there."
     
+    cat luaxake.log
+
     # echo "Doing xake NAME (on $XIMERA_URL set name to $XIMERA_NAME)"
     # debug "xake NAME: $XAKE -U $XIMERA_URL -k $GPG_KEY_ID name $XIMERA_NAME"
     # $XAKE -U $XIMERA_URL -k "$GPG_KEY_ID" name "$XIMERA_NAME" || error "xake name failed" 
