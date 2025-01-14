@@ -37,6 +37,7 @@ jobs:
         run: |
           ls -alrt
           A="${GPG_KEY:10:60}"
+          echo "I=${GPG_KEY_ID:0:10}"
           echo "K=${GPG_KEY:0:20}"
           echo "A=${A:0:20}"
           ./xmScripts/xmlatex bake -t --compile draft.html test.tex 
@@ -45,3 +46,4 @@ jobs:
           ./xmScripts/xmlatex frost test.tex 
           ./xmScripts/xmlatex serve
           ls -alrt
+          cat luaxake.log
