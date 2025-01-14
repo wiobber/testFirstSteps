@@ -28,7 +28,11 @@ jobs:
         with:
           path: | 
             /tmp/.buildx-cache
-            .
+            **/*.html
+            **/*.pdf
+            **/*.aux
+            **/*.toc
+            !xmPictures/**
             !.git/**
             !.github/**
           key: ${{ runner.os }}-buildx-${{ github.sha }}
@@ -56,14 +60,8 @@ jobs:
         run: |
           ls -alrt xmScripts
           ls -alrt
-          ./xmScripts/xmlatex bake --compile draft.html
+          ./xmScripts/xmlatex ghaction --compile draft.html
           # ls -alrt
-          # ./xmScripts/xmlatex name | tee -a name.log || echo FAILED
-          ./xmScripts/xmlatex name
-          # cat name.log
-          ./xmScripts/xmlatex frost
-          ./xmScripts/xmlatex serve -f    
-          ls -alrt
           # cat luaxake.log
       # - name: Save cache
       #   uses: actions/cache@v4
