@@ -42,17 +42,16 @@ jobs:
             ${{ runner.os }}-buildx-
             ${{ runner.os }}-
 
-      - name: Set cache key
-        run: |
-          echo "CACHE_KEY=${{ runner.os }}-buildx-${{ github.sha }}" >> $GITHUB_ENV
-          echo "CACHE_KEY=${{ runner.os }}-buildx-${{ github.sha }}" 
-        id: cache-key
+      # - name: Set cache key
+      #   run: |
+      #     echo "CACHE_KEY=${{ runner.os }}-buildx-${{ github.sha }}" >> $GITHUB_ENV
+      #     echo "CACHE_KEY=${{ runner.os }}-buildx-${{ github.sha }}" 
+      #   id: cache-key
 
-      - name: Log cache key
-        run: | 
-          echo "Cache key used: ${{ env.CACHE_KEY }}"
-        id: log-key
-
+      # - name: Log cache key
+      #   run: | 
+      #     echo "Cache key used: ${{ env.CACHE_KEY }}"
+      #   id: log-key
 
       - name: Build and publish Ximera courses
         env:
@@ -60,18 +59,5 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           XIMERA_NAME: fromaction
         run: |
-          ls -alrt xmScripts
           ls -alrt
           ./xmScripts/xmlatex ghaction --compile draft.html
-          # ls -alrt
-          # cat luaxake.log
-      # - name: Save cache
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: | 
-      #       /tmp/.buildx-cache
-      #       .
-      #       !.git/**
-      #       !.github/**
-      #     key: ${{ runner.os }}-buildx-${{ github.sha }}
-            
