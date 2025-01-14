@@ -41,7 +41,10 @@ jobs:
         id: cache-key
 
       - name: Log cache key
-        run: echo "Cache key used: ${{ env.CACHE_KEY }}"
+        run: | 
+          echo "Cache key used: ${{ env.CACHE_KEY }}"
+        id: log-key
+
 
       - name: Build and publish Ximera courses
         env:
