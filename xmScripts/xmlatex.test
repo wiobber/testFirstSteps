@@ -478,8 +478,8 @@ xake_name() {
 
 reset_file_times
 
-echo "Fetching more history ..."
-git fetch --depth=100 
+# echo "Fetching more history ..."
+# git fetch --depth=100 
 
 
 if [[ "$COMMAND" == "bash" ]]
