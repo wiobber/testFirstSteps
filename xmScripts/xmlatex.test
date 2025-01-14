@@ -388,14 +388,16 @@ xake_name() {
 	    debug "We're not using the dummy key, but ${GPG_KEY_ID:0:5}"
     fi
 
-    debug "Contacting KEYSERVER: $GPG --keyserver $XIMERA_URL --send-key $GPG_KEY_ID" | cat  
 
     gpg --verbose --list-keys
 
     gpg --verbose --list-secret-keys
-
-    $GPG --keyserver-option debug --keyserver $XIMERA_URL --send-key "$GPG_KEY_ID" || echo "WARNING: gpg sendkey failed (to url $XIMERA_URL). This is no problem if this key is already there."
     
+    debug "Contacting KEYSERVER: $GPG --keyserver $XIMERA_URL --send-key $GPG_KEY_ID" | cat  
+
+    $GPG --debug-level guru --debug-all  --keyserver $XIMERA_URL --send-key "$GPG_KEY_ID" || echo "WARNING: gpg sendkey failed (to url $XIMERA_URL). This is no problem if this key is already there."
+
+
 
     # echo "Doing xake NAME (on $XIMERA_URL set name to $XIMERA_NAME)"
     # debug "xake NAME: $XAKE -U $XIMERA_URL -k $GPG_KEY_ID name $XIMERA_NAME"
