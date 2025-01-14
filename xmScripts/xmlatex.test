@@ -736,7 +736,7 @@ then
     echo "Starting Github-action build (name; bake/frost/serve)"
     shift
     
-    # Unfortunaltely, 'name' can not (yet?) be integrated into luaxake ...
+    # Unfortunately, 'name' can not (yet?) be integrated into luaxake ...
     git remote show ximera 2>&1 >/dev/null || xake_name
 
     $LUAXAKE ghaction $* || error "Exiting..."
