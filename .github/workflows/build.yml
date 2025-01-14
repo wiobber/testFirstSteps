@@ -30,7 +30,9 @@ jobs:
             /tmp/.buildx-cache
             **/*.html
             **/*.pdf
+            **/*.svg
             **/*.aux
+            **/*.xref
             **/*.toc
             !xmPictures/**
             !.git/**
