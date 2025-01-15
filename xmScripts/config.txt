@@ -2,7 +2,7 @@
 # version of Ximera xake container to use (with xmlatex)
 #
 : "${XAKE_BASE:=ximeralatex}"
-: "${XAKE_VERSION:=v2.5.3}"
+: "${XAKE_VERSION:=v2.5.5}"
 #: "${XAKE_VERSION:=latest}"
 ## Alternatives:
 # : "${XAKE_VERSION:=v2.4.2-full}"    # with texlive_full
@@ -13,16 +13,16 @@
 #      via Codespaces: connect keys via GitHub Codespaces Secrets
 #      on your PC:     set environment variables, or edit .xmKeyFile
 # To generate a key-pair, fill in your name and email, and run 'xmlatex genKey'
-YOUR_NAME=""
-YOUR_EMAIL=""
+YOUR_NAME="Wim Obbels"
+YOUR_EMAIL="wim.obbels25@kuleuven.be"
 # !! Do NEVER commit real keys to the repo !!
 # !! DO NEVER SAVE THE KEYS THEMSELVE IN THIS FILE   !!
 #
 
-: "${XIMERA_NAME:=testfirststeps}"
+: "${XIMERA_NAME:=wimfirsttest}"
 ## : "${XIMERA_URL:=http://localhost:2000/}"
-## : "${XIMERA_URL:=https://ximera.osu.edu}"
-: "${XIMERA_URL:=https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/}"
+##: "${XIMERA_URL:=https://ximera.osu.edu/}"
+##: "${XIMERA_URL:=https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/}"
 ## : "${XIMERA_URL:=https://set.kuleuven.be/voorkennis/}"
 
 #
@@ -37,7 +37,7 @@ YOUR_EMAIL=""
 # For testing/debugging
 #
 # : "${DEBUG:=1}"
-: "${COMMAND:=./xmScripts/xmlatex.test}"
+# : "${COMMAND:=./xmScripts/xmlatex.test}"
 #
 # for LOCALLY generated/tagged images, use:
 # export DOCKER_REPO=" "

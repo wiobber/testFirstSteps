@@ -59,5 +59,9 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           XIMERA_NAME: fromaction
         run: |
-          ls -alrt
+          ls -alrt ./xmScripts
+          chmod -x ./xmScripts/xmlatex
+          ls -alrt ./xmScripts
+          git status
+          chmod +x ./xmScripts/xmlatex
           ./xmScripts/xmlatex ghaction --compile draft.html
